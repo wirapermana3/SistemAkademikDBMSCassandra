@@ -1,0 +1,30 @@
+CREATE KEYSPACE uassbd WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'}  AND durable_writes = true;
+
+CREATE TABLE mahasiswa (
+    nim text PRIMARY KEY,
+    alamat text,
+    dos_akdmk text,
+    jenis_kelamin text,
+    kelas text,
+    nama text,
+    nilai_ipk double,
+    no_telepon text,
+    semester text,
+    sks_now int,
+    sks_total int,
+    sts_now text,
+    sts_smt text,
+    tanggal_lahir date,
+    tempat_lahir text
+);
+
+
+// Contoh kueri INSERT INTO pada CQL 
+INSERT INTO mahasiswa (nim, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, no_telepon, kelas, semester, nilai_ipk, dos_akdmk, sks_now, sks_total, sts_now, sts_smt) VALUES('1187050098', 'Satya Wira', 'Bandung', '2000-05-13', 'Laki-laki', 'Bandung Barat', '0895379199999', 'IF-B', '5', 3.92, 'DosenAkademik3', 22, 86, 'Belum lulus', 'Aktif');
+
+// Sampel Data Dummy
+1187050098,Bandung Barat,DosenAkademik3,Laki-Laki,IF-B,Satya Wira,3.92,0895379199999,5,22,86,Belum lulus,Aktif,2000-05-13,Bandung
+1187050086,Garut,DosenAkademik2,Laki-laki,IF-B,Mahasiswa4,3.75,0834445556666,5,24,83,Belum Lulus,Aktif,2000-02-15,Garut
+1187050002,Sukabumi,DosenAkademik1,Laki-laki,IF-A,Mahasiswa2,3.81,089112223334,5,22,86,Belum Lulus,Aktif,2000-03-15,Sukabumi
+1187050081,Ngawi,DosenAkademik2,Laki-laki,IF-B,Mahasiswa3,3.6,0874442221111,5,22,86,Belum Lulus,Aktif,1999-12-24,Ngawi
+1187050001,"Cibiru, Bandung",DosenAkademik1,Laki-laki,IF-A,Mahasiswa1,3.56,082111222333,5,24,83,Belum Lulus,Aktif,2000-06-17,Bandung
